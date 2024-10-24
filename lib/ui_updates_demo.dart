@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dart_internals/demo_buttons.dart';
 
 class UIUpdatesDemo extends StatefulWidget {
   const UIUpdatesDemo({super.key, required this.title});
@@ -28,46 +29,25 @@ class _UIUpdatesDemo extends State<UIUpdatesDemo> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
+      body: const Padding(
+        padding: EdgeInsets.all(8.0),
         child: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text(
+              Text(
                 'Every Flutter Developer should have a basic understanding of Flutter\'s internals',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 16),
-              const Text(
+              SizedBox(height: 16),
+              Text(
                 'Do you understand how Flutter updates UIs?',
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 24),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      setState(() {
-                        _isUnderstood = false;
-                      });
-                    },
-                    child: const Text('No'),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      setState(() {
-                        _isUnderstood = true;
-                      });
-                    },
-                    child: const Text('Yes'),
-                  ),
-                ],
-              ),
-              if (_isUnderstood) const Text('Awesome!!'),
+              SizedBox(height: 24),
+              DemoButtons(),
             ],
           ),
         ),
