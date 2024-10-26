@@ -6,7 +6,7 @@ class CheckableTodoItem extends StatefulWidget {
   const CheckableTodoItem(this.text, this.priority, {super.key});
 
   final String text;
-  final String priority;
+  final Priority priority;
 
   @override
   State<CheckableTodoItem> createState() {
